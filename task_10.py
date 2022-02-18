@@ -17,7 +17,8 @@ def start(update, context):
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
 
     update.message.reply_text(
-        'Привет! Я бот-переводчик.\nС какого на какой язык мне переводить?',
+        'Привет! А Елена Александровна была не права. Не веришь?'
+        '\nС какого на какой язык мне переводить?',
         reply_markup=markup
     )
     return 1
