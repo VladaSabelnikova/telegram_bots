@@ -35,10 +35,13 @@ def translator(update, context):
     addr = address.format(text, langpair)
 
     response = requests.get(addr)
-    if response:
+    if response.status_code == 200:
         json_response = response.json()
         result = json_response['responseData']['translatedText']
         update.message.reply_text(result)
+
+    else:
+        update.message.reply_text('К сожалению сервер упал. Зайдите позже')
 
     return 2
 
